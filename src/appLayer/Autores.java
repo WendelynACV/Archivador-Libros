@@ -1,21 +1,27 @@
 package appLayer;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Autores {
+public enum Autores {
 
-    private ArrayList<Autor> autores;
+    instance;
 
-    public Autores() {
-        autores = new ArrayList<>();
-    }
+    private Map<String, Autor> contentProvider = new HashMap<>();
+
+    private Autores(){}
 
     public void agregarAutor(Autor autor){
-        autores.add(autor);
+        contentProvider.put(autor.getIdAutor(), autor);
     }
 
-    public ArrayList<Autor> obtenerActores(){
-        return autores;
+    public void borrarAutor(Autor autor){
+        contentProvider.remove(autor.getIdAutor(), autor);
+    }
+
+    public Map<String, Autor> getModel(){
+        return contentProvider;
     }
 
 }
