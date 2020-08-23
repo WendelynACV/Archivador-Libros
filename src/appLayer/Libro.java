@@ -1,26 +1,38 @@
 package appLayer;
 
-public class Libro {
-    private Autor autor = null;
-    private String idLibro = "";
-    private String descripcion = "";
-    private int cantidad;
-    private boolean disponibilidad = false;
+import javax.xml.bind.annotation.XmlRootElement;
 
-    public Libro (Autor autor, String idLibro, String descripcion, int cantidad, boolean disponibilidad) {
-        this.autor = autor;
+@XmlRootElement
+public class Libro {
+
+    private String idAutor;
+    private String idLibro;
+    private String descripcion;
+    private int cantidad;
+    private boolean disponibilidad;
+
+    public Libro() {
+        this.idAutor = "";
+        this.idLibro = "";
+        this.descripcion = "";
+        this.cantidad = 0;
+        this.disponibilidad = false;
+    }
+
+    public Libro(String idAutor, String idLibro, String descripcion, int cantidad, boolean disponibilidad) {
+        this.idAutor = idAutor;
         this.idLibro = idLibro;
         this.descripcion = descripcion;
         this.cantidad = cantidad;
         this.disponibilidad = disponibilidad;
     }
 
-    public Autor getAutor() {
-        return autor;
+    public String getIdAutor() {
+        return idAutor;
     }
 
-    public void setAutor(Autor autor) {
-        this.autor = autor;
+    public void setIdAutor(String idAutor) {
+        this.idAutor = idAutor;
     }
 
     public String getIdLibro() {

@@ -1,17 +1,26 @@
 package appLayer;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Libros {
+public enum Libros {
 
-    public ArrayList<Libro> libros;
+    instance;
 
-    public Libros() {
-        libros = new ArrayList<>();
-    }
+    private Map<String, Libro> contentProvider = new HashMap<>();
+
+    private Libros(){}
 
     public void agregarLibro(Libro libro){
-        libros.add(libro);
+        contentProvider.put(libro.getIdLibro(), libro);
+    }
+
+    public void borrarLibro(Libro libro){
+        contentProvider.remove(libro.getIdLibro(), libro);
+    }
+
+    public Map<String, Libro> getModel(){
+        return contentProvider;
     }
 
 }

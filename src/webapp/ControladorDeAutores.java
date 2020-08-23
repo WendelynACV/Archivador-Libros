@@ -11,7 +11,7 @@ import javax.ws.rs.core.UriInfo;
 import java.util.ArrayList;
 import java.util.List;
 
-@Path("/actores")
+@Path("/autores")
 public class ControladorDeAutores {
 
     @Context
@@ -24,16 +24,16 @@ public class ControladorDeAutores {
     @Path("/obtenerAutores")
     @Produces("application/json")
     public List<Autor> obtenerAutores() {
-        List<Autor> actores = new ArrayList<Autor>();
-        actores.addAll(Autores.instance.getModel().values());
-        return actores;
+        List<Autor> autores = new ArrayList<>();
+        autores.addAll(Autores.instance.getModel().values());
+        return autores;
     }
 
     @POST
-    @Path("/guardarAutores")
+    @Path("/guardarAutor")
     @Produces("application/json")
     @Consumes("application/json")
-    public Autor guardarAutores(Autor autor) {
+    public Autor guardarAutor(Autor autor) {
         Autores.instance.agregarAutor(autor);
         return autor;
     }
