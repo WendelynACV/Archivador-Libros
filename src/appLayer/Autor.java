@@ -1,6 +1,9 @@
 package appLayer;
 
-public class Autor {
+import java.io.Serializable;
+
+public class Autor implements Serializable {
+
     private String idAutor;
     private String nombreAutor= "";
     private String nacionalidad ="";

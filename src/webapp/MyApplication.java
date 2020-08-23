@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 //Defines the base URI for all resource URIs.
-@ApplicationPath("/libros")
+@ApplicationPath("/biblioteca")
 //The java class declares root resource and provider classes
 public class MyApplication extends Application {
 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Autores {
 
-    public ArrayList<Autor> autores;
+    private ArrayList<Autor> autores;
 
     public Autores() {
         autores = new ArrayList<>();
@@ -14,4 +14,7 @@ public class Autores {
         autores.add(autor);
     }
 
+    public ArrayList<Autor> obtenerActores(){
+        return autores;
+    }
 }
