@@ -9,7 +9,7 @@ public class ControladorDeLibros {
 
     @GET
     @Produces("application/json")
-    public String getClichedMessage() {
+    public String getBooks() {
         return "Hello World";
     }
 
