@@ -1,12 +1,19 @@
 package appLayer;
 
-import java.io.Serializable;
+import javax.xml.bind.annotation.XmlRootElement;
 
-public class Autor implements Serializable {
+@XmlRootElement
+public class Autor {
 
     private String idAutor;
-    private String nombreAutor= "";
-    private String nacionalidad ="";
+    private String nombreAutor;
+    private String nacionalidad;
+
+    public Autor () {
+        this.idAutor = "";
+        this.nombreAutor = "";
+        this.nacionalidad = "";
+    }
 
     public Autor (String idAutor, String nombreAutor, String nacionalidad) {
         this.idAutor = idAutor;

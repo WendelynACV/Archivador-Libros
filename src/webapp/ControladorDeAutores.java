@@ -10,13 +10,13 @@ import java.util.ArrayList;
 
 @Path("/actores")
 public class ControladorDeAutores {
-    
+
     private Autores actores = new Autores();
 
     @GET
     @Path("/obtenerAutores")
     @Produces("application/json")
-    public ArrayList<Autor> getAuthor() {
+    public ArrayList<Autor> obtenerAutores() {
         return actores.obtenerActores();
     }
 
@@ -24,10 +24,7 @@ public class ControladorDeAutores {
     @Path("/guardarAutores")
     @Produces("application/json")
     @Consumes("application/json")
-    public Autor saveAuthor(@QueryParam("idAutor") String idAutor,
-                             @QueryParam("nombreAutor") String nombreAutor,
-                             @QueryParam("nacionalidad") String nacionalidad) {
-        Autor autor = new Autor(idAutor, nombreAutor, nacionalidad);
+    public Autor guardarAutores(Autor autor) {
         this.actores.agregarAutor(autor);
         return autor;
     }
