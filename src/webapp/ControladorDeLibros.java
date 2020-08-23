@@ -28,4 +28,19 @@ public class ControladorDeLibros {
         return libro;
     }
 
+    @DELETE
+    @Path("/borrarLibro/{idLibro}")
+    @Produces("application/json")
+    public String borrarLibro(@PathParam("idLibro") String idLibro) {
+        Libros.instance.borrarLibro(idLibro);
+        return "El libro se borro exitosamente.";
+    }
+
+    @GET
+    @Path("/buscarLibroPorAutor/{idAutor}")
+    @Produces("application/json")
+    public List<Libro> buscarLibroPorAutor(@PathParam("idAutor") String idAutor) {
+        return Libros.instance.buscarLibrosPorAutor(idAutor);
+    }
+
 }
